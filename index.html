@@ -6,7 +6,7 @@
   <title>Strong and Vegan — Yes I Am</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -21,22 +21,22 @@
       --bg-secondary: #f9f9f7;
       --border: rgba(0,0,0,0.1);
     }
-    body { font-family: 'DM Sans', Georgia, sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: 'DM Sans', Arial, sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
     .container { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
 
     nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0 1.75rem; }
     .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-name { font-family: 'Fraunces', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.1; }
-    .nav-name em { color: var(--green-accent); font-style: italic; }
+    .nav-name { font-family: 'DM Sans', Arial, sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.1; }
+    .nav-name em { color: var(--green-accent); font-style: normal; }
     .nav-tag { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
-    .nav-cta { background: var(--green-accent); color: #04342c; font-weight: 500; font-size: 0.8rem; padding: 8px 18px; border-radius: 100px; border: none; cursor: pointer; text-decoration: none; }
+    .nav-cta { background: var(--green-accent); color: #04342c; font-weight: 700; font-size: 0.8rem; padding: 8px 18px; border-radius: 100px; border: none; cursor: pointer; text-decoration: none; }
 
     .hero { background: var(--green-dark); border-radius: 20px; padding: 3.5rem 2.5rem 3rem; position: relative; overflow: hidden; margin-bottom: 1.5rem; }
     .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; background: var(--green-mid); opacity: 0.5; }
     .hero::after { content: ''; position: absolute; bottom: -60px; left: 25%; width: 220px; height: 220px; border-radius: 50%; background: var(--green-accent); opacity: 0.06; }
     .badge { display: inline-block; background: var(--green-accent); color: #04342c; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; margin-bottom: 1.5rem; position: relative; z-index: 1; }
-    h1 { font-family: 'Fraunces', Georgia, serif; font-size: 2.6rem; font-weight: 700; line-height: 1.1; color: var(--beige); margin-bottom: 1rem; position: relative; z-index: 1; }
-    h1 em { font-style: italic; color: var(--green-accent); }
+    h1 { font-family: 'DM Sans', Arial, sans-serif; font-size: 2.6rem; font-weight: 700; line-height: 1.1; color: var(--beige); margin-bottom: 1rem; position: relative; z-index: 1; letter-spacing: -0.02em; }
+    h1 em { font-style: normal; color: var(--green-accent); }
     .hero-sub { font-size: 1rem; color: var(--green-light); line-height: 1.65; max-width: 460px; margin-bottom: 2rem; position: relative; z-index: 1; }
     .hero-cta { background: var(--green-accent); color: #04342c; font-weight: 700; font-size: 1rem; padding: 14px 32px; border-radius: 100px; border: none; cursor: pointer; position: relative; z-index: 1; text-decoration: none; display: inline-block; }
     .proof { display: flex; gap: 1.5rem; margin-top: 2rem; position: relative; z-index: 1; flex-wrap: wrap; }
@@ -46,52 +46,52 @@
     .slabel { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
 
     .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 2rem; }
-    .why-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.25rem 1rem; }
+    .why-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1rem; }
     .icon { width: 34px; height: 34px; border-radius: 8px; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; }
     .ic-g { background: #eaf3de; color: #3b6d11; }
     .ic-t { background: #e1f5ee; color: #0f6e56; }
     .ic-a { background: #faeeda; color: #854f0b; }
     .ic-b { background: #e6f1fb; color: #185fa5; }
-    .why-card h3 { font-size: 0.88rem; font-weight: 500; margin-bottom: 4px; }
+    .why-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
     .why-card p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
 
     .prog { background: var(--bg-secondary); border-radius: 20px; padding: 1.75rem; margin-bottom: 2rem; }
-    .prog-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+    .prog-title { font-family: 'DM Sans', Arial, sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.02em; }
     .prog-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
     .blocs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1.5rem; }
-    .bloc { background: var(--bg); border: 0.5px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+    .bloc { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
     .bloc-n { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-accent); margin-bottom: 3px; }
-    .bloc-name { font-size: 0.82rem; font-weight: 500; margin-bottom: 3px; }
+    .bloc-name { font-size: 0.82rem; font-weight: 700; margin-bottom: 3px; }
     .bloc-d { font-size: 0.7rem; color: var(--text-muted); }
     .price-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .price { font-family: 'Fraunces', Georgia, serif; font-size: 2.2rem; font-weight: 700; }
-    .price span { font-size: 0.8rem; font-weight: 400; color: var(--text-muted); font-family: 'DM Sans', sans-serif; }
+    .price { font-family: 'DM Sans', Arial, sans-serif; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
+    .price span { font-size: 0.8rem; font-weight: 400; color: var(--text-muted); }
     .buy { background: var(--green-dark); color: var(--green-accent); font-weight: 700; font-size: 0.9rem; padding: 12px 24px; border-radius: 100px; border: 1.5px solid var(--green-accent); cursor: pointer; text-decoration: none; display: inline-block; }
 
-    .eco { background: var(--bg); border: 0.5px solid var(--border); border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; }
-    .eco-title { font-size: 0.95rem; font-weight: 500; margin-bottom: 1rem; }
+    .eco { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; }
+    .eco-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
     .eco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
     .eco-item { background: var(--bg-secondary); border-radius: 8px; padding: 0.85rem; }
-    .eco-item strong { display: block; font-weight: 500; font-size: 0.8rem; margin-bottom: 2px; }
+    .eco-item strong { display: block; font-weight: 700; font-size: 0.8rem; margin-bottom: 2px; }
     .eco-item span { color: var(--text-muted); font-size: 0.7rem; }
-    .eco-main { border: 1.5px solid var(--green-accent); }
+    .eco-main { border: 2px solid var(--green-accent); }
 
     .coach { display: flex; gap: 1rem; align-items: flex-start; background: var(--green-dark); border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; }
-    .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--green-mid); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; color: var(--green-accent); flex-shrink: 0; }
-    .coach-name { font-weight: 500; font-size: 1rem; margin-bottom: 2px; color: var(--beige); }
+    .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--green-mid); display: flex; align-items: center; justify-content: center; font-family: 'DM Sans', Arial, sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--green-accent); flex-shrink: 0; }
+    .coach-name { font-weight: 700; font-size: 1rem; margin-bottom: 2px; color: var(--beige); }
     .coach-role { font-size: 0.75rem; color: var(--green-accent); margin-bottom: 0.6rem; }
     .coach-bio { font-size: 0.82rem; color: var(--green-light); line-height: 1.6; font-style: italic; }
 
     .faq { margin-bottom: 2rem; }
-    .faq-item { background: var(--bg); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 8px; cursor: pointer; }
-    .faq-q { font-size: 0.88rem; font-weight: 500; }
+    .faq-item { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 8px; cursor: pointer; }
+    .faq-q { font-size: 0.88rem; font-weight: 700; }
     .faq-a { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.6rem; display: none; }
     .faq-item.open .faq-a { display: block; }
     .faq-item.open { border-color: rgba(0,0,0,0.2); }
 
     .final { background: var(--green-mid); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 1rem; }
-    .final-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.8rem; font-weight: 700; color: var(--beige); margin-bottom: 0.75rem; line-height: 1.2; }
-    .final-title em { font-style: italic; color: var(--green-accent); }
+    .final-title { font-family: 'DM Sans', Arial, sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--beige); margin-bottom: 0.75rem; line-height: 1.2; letter-spacing: -0.02em; }
+    .final-title em { font-style: normal; color: var(--green-accent); }
     .final-sub { font-size: 0.9rem; color: var(--green-light); margin-bottom: 1.75rem; }
     .final-cta { background: var(--green-accent); color: #04342c; font-weight: 700; font-size: 1rem; padding: 14px 36px; border-radius: 100px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
 
@@ -111,7 +111,7 @@
       <div class="nav-logo">
         <svg width="36" height="36" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="55,8 98,30 98,78 55,100 12,78 12,30" fill="#1a3c2b"/>
-          <text x="18" y="74" font-family="DM Sans, sans-serif" font-weight="700" font-size="62" fill="#f5f0e8" letter-spacing="-4">SV</text>
+          <text x="18" y="74" font-family="DM Sans, Arial, sans-serif" font-weight="700" font-size="62" fill="#f5f0e8" letter-spacing="-4">SV</text>
           <ellipse cx="84" cy="22" rx="9" ry="15" transform="rotate(35 84 22)" fill="#4caf82"/>
           <ellipse cx="92" cy="30" rx="5" ry="9" transform="rotate(20 92 30)" fill="#4caf82" opacity="0.6"/>
         </svg>
