@@ -164,20 +164,15 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green-accent), var(--green-accent-dark));
-      display: grid;
-      place-items: center;
-      color: white;
-      box-shadow: var(--shadow-sm);
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .brand-mark svg {
-      width: 24px;
-      height: 24px;
+      width: 42px;
+      height: 42px;
     }
 
     .brand-text {
@@ -756,10 +751,11 @@
     <div class="container nav">
       <a href="#top" class="brand">
         <div class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3c2.6 2 4.2 4.1 4.2 6.6A4.2 4.2 0 1 1 7.8 9.6C7.8 7.1 9.4 5 12 3Z"></path>
-            <path d="M12 13v8"></path>
-            <path d="M8 17h8"></path>
+          <svg width="42" height="42" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="55,8 98,30 98,78 55,100 12,78 12,30" fill="#1a3c2b"/>
+            <text x="18" y="74" font-family="DM Sans, Arial, sans-serif" font-weight="700" font-size="62" fill="#f5f0e8" letter-spacing="-4">SV</text>
+            <ellipse cx="84" cy="22" rx="9" ry="15" transform="rotate(35 84 22)" fill="#4caf82"/>
+            <ellipse cx="92" cy="30" rx="5" ry="9" transform="rotate(20 92 30)" fill="#4caf82" opacity="0.6"/>
           </svg>
         </div>
         <div class="brand-text">
