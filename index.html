@@ -1,352 +1,1019 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Force Lower - Strong and Vegan</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strong and Vegan — Force, mobilité, progression</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --green-dark: #0f2218;
-      --green-mid: #1a3c2b;
-      --green-accent: #4caf82;
-      --green-light: #9dbfae;
-      --beige: #f5f0e8;
-      --text: #1a1a1a;
-      --text-muted: #6b7280;
-      --bg: #ffffff;
-      --bg-secondary: #f9f9f7;
-      --border: rgba(0,0,0,0.1);
+      --bg: #f7f6f2;
+      --surface: #fbfaf7;
+      --surface-2: #f1eee8;
+      --text: #1f241f;
+      --muted: #66706a;
+      --line: rgba(20, 30, 24, 0.10);
+
+      --green-dark: #102319;
+      --green-mid: #173628;
+      --green-soft: #dbe8df;
+      --green-accent: #58b08b;
+      --green-accent-dark: #0f5f49;
+      --green-pale: #9ec3b1;
+
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+
+      --shadow-sm: 0 8px 24px rgba(16, 35, 25, 0.06);
+      --shadow-md: 0 18px 50px rgba(16, 35, 25, 0.10);
+
+      --max: 1180px;
     }
-    body { font-family: 'DM Sans', Arial, sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
-    .container { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
 
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0 1.75rem; }
-    .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-name { font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.1; }
-    .nav-name em { color: var(--green-accent); font-style: normal; }
-    .nav-tag { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
-    .nav-cta { background: var(--green-accent); color: #04342c; font-weight: 700; font-size: 0.8rem; padding: 8px 18px; border-radius: 100px; border: none; cursor: pointer; text-decoration: none; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .hero { background: var(--green-dark); border-radius: 20px; padding: 3.5rem 2.5rem 3rem; position: relative; overflow: hidden; margin-bottom: 1.5rem; }
-    .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; background: var(--green-mid); opacity: 0.5; }
-    .badge { display: inline-block; background: var(--green-accent); color: #04342c; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; margin-bottom: 1.5rem; position: relative; z-index: 1; }
-    h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.1; color: var(--beige); margin-bottom: 1rem; position: relative; z-index: 1; letter-spacing: -0.02em; }
-    h1 em { font-style: normal; color: var(--green-accent); }
-    .hero-sub { font-size: 1rem; color: var(--green-light); line-height: 1.65; max-width: 460px; margin-bottom: 2rem; position: relative; z-index: 1; }
-    .hero-cta { background: var(--green-accent); color: #04342c; font-weight: 700; font-size: 1rem; padding: 14px 32px; border-radius: 100px; border: none; cursor: pointer; position: relative; z-index: 1; text-decoration: none; display: inline-block; }
-    .hero-micro { font-size: 0.72rem; color: var(--green-light); margin-top: 10px; position: relative; z-index: 1; }
-    .proof { display: flex; gap: 1.5rem; margin-top: 2rem; position: relative; z-index: 1; flex-wrap: wrap; }
-    .proof-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--green-light); }
-    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-accent); flex-shrink: 0; }
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
 
-    .slabel { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
 
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 2rem; }
-    .card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1rem; }
-    .icon { width: 34px; height: 34px; border-radius: 8px; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; }
-    .ic-g { background: #eaf3de; color: #3b6d11; }
-    .ic-t { background: #e1f5ee; color: #0f6e56; }
-    .ic-a { background: #faeeda; color: #854f0b; }
-    .ic-b { background: #e6f1fb; color: #185fa5; }
-    .card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
-    .card p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .parcours { background: var(--bg-secondary); border-radius: 20px; padding: 1.75rem; margin-bottom: 2rem; }
-    .parcours-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.25rem; }
-    .steps { display: flex; flex-direction: column; gap: 12px; }
-    .step { display: flex; gap: 1rem; align-items: flex-start; }
-    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--green-mid); color: var(--green-accent); font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-    .step h4 { font-size: 0.88rem; font-weight: 700; margin: 0 0 2px; }
-    .step p { font-size: 0.78rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
 
-    .prog { background: var(--bg-secondary); border-radius: 20px; padding: 1.75rem; margin-bottom: 2rem; }
-    .prog-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.02em; }
-    .prog-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-    .blocs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1.5rem; }
-    .bloc { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
-    .bloc-n { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-accent); margin-bottom: 3px; }
-    .bloc-name { font-size: 0.82rem; font-weight: 700; margin-bottom: 3px; }
-    .bloc-d { font-size: 0.7rem; color: var(--text-muted); }
-    .price-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .price { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
-    .price span { font-size: 0.8rem; font-weight: 400; color: var(--text-muted); }
-    .buy { background: var(--green-dark); color: var(--green-accent); font-weight: 700; font-size: 0.9rem; padding: 12px 24px; border-radius: 100px; border: 1.5px solid var(--green-accent); cursor: pointer; text-decoration: none; display: inline-block; }
+    .section {
+      padding: 5rem 0;
+    }
 
-    .bilan { background: var(--green-dark); border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; }
-    .bilan-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; }
-    .bilan-title { font-size: 0.95rem; font-weight: 700; color: var(--beige); margin: 0; }
-    .bilan-tag { display: inline-block; background: var(--green-accent); color: #04342c; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; flex-shrink: 0; }
-    .bilan-steps { display: flex; flex-direction: column; gap: 8px; }
-    .bilan-step { display: flex; align-items: flex-start; gap: 8px; }
-    .bilan-step-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-accent); flex-shrink: 0; margin-top: 6px; }
-    .bilan-step p { font-size: 0.8rem; color: var(--green-light); line-height: 1.5; margin: 0; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-accent-dark);
+      background: var(--green-soft);
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
 
-    .eco { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; }
-    .eco-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
-    .eco-sub { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .eco-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-    .eco-section { margin-bottom: 12px; }
-    .eco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
-    .eco-item { background: var(--bg-secondary); border-radius: 8px; padding: 0.85rem; }
-    .eco-item strong { display: block; font-weight: 700; font-size: 0.8rem; margin-bottom: 2px; }
-    .eco-item span { color: var(--text-muted); font-size: 0.7rem; }
-    .eco-main { border: 2px solid var(--green-accent); }
-    .eco-optional { border: 1px dashed var(--border); }
+    .section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.9rem;
+    }
 
-    .coach { display: flex; gap: 1rem; align-items: flex-start; background: var(--green-dark); border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; }
-    .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--green-mid); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700; color: var(--green-accent); flex-shrink: 0; }
-    .coach-name { font-weight: 700; font-size: 1rem; margin-bottom: 2px; color: var(--beige); }
-    .coach-role { font-size: 0.75rem; color: var(--green-accent); margin-bottom: 0.6rem; }
-    .coach-bio { font-size: 0.82rem; color: var(--green-light); line-height: 1.6; font-style: italic; }
+    .section-text {
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1rem;
+    }
 
-    .faq { margin-bottom: 2rem; }
-    .faq-item { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 8px; cursor: pointer; }
-    .faq-q { font-size: 0.88rem; font-weight: 700; margin: 0; }
-    .faq-a { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.6rem; display: none; }
-    .faq-item.open .faq-a { display: block; }
-    .faq-item.open { border-color: rgba(0,0,0,0.2); }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
 
-    .final { background: var(--green-mid); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 1rem; }
-    .final-title { font-size: 1.8rem; font-weight: 700; color: var(--beige); margin-bottom: 0.75rem; line-height: 1.2; letter-spacing: -0.02em; }
-    .final-title em { font-style: normal; color: var(--green-accent); }
-    .final-sub { font-size: 0.9rem; color: var(--green-light); margin-bottom: 1.75rem; }
-    .final-cta { background: var(--green-accent); color: #04342c; font-weight: 700; font-size: 1rem; padding: 14px 36px; border-radius: 100px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.9rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      border: 1px solid transparent;
+    }
 
-    footer { text-align: center; padding: 1.5rem 0; font-size: 0.72rem; color: var(--text-muted); }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
 
-    @media (max-width: 480px) {
-      h1 { font-size: 1.9rem; }
-      .hero { padding: 2.5rem 1.5rem 2rem; }
-      .blocs { grid-template-columns: 1fr; }
+    .btn-primary {
+      background: var(--green-accent);
+      color: #08261d;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: rgba(255,255,255,0.18);
+      color: #ecf4ef;
+    }
+
+    .btn-dark {
+      background: var(--green-dark);
+      color: #eaf3ee;
+    }
+
+    .btn-light {
+      background: transparent;
+      color: var(--green-dark);
+      border-color: var(--line);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(247, 246, 242, 0.82);
+      border-bottom: 1px solid rgba(16, 35, 25, 0.06);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-accent), var(--green-accent-dark));
+      display: grid;
+      place-items: center;
+      color: white;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .brand-mark svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-name span {
+      color: var(--green-accent-dark);
+    }
+
+    .brand-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 0.8rem 1.1rem;
+      background: var(--green-dark);
+      color: #edf5f0;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .hero-shell {
+      background: linear-gradient(135deg, #102319 0%, #173628 65%, #1f4935 100%);
+      color: #eef5f1;
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-shell::before,
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-shell::before {
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      top: -120px;
+      background: rgba(88, 176, 139, 0.14);
+    }
+
+    .hero-shell::after {
+      width: 260px;
+      height: 260px;
+      left: -80px;
+      bottom: -80px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 4.5rem 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.2rem;
+      max-width: 10ch;
+    }
+
+    .hero h1 span {
+      color: var(--green-accent);
+    }
+
+    .hero p {
+      max-width: 56ch;
+      font-size: 1.05rem;
+      color: var(--green-pale);
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.4rem;
+      margin-top: 1.6rem;
+    }
+
+    .hero-proof-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.82rem;
+      color: #d4e7dc;
+    }
+
+    .hero-proof-item i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-accent);
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .hero-card-wrap {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-card {
+      width: min(100%, 360px);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 24px;
+      padding: 1.3rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card-top {
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 1.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c2d9cd;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .hero-card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-card-text {
+      font-size: 0.9rem;
+      color: #cfe0d7;
+    }
+
+    .hero-stack {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .hero-stack-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 0.95rem 1rem;
+    }
+
+    .hero-stack-item strong {
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-stack-item span {
+      display: block;
+      font-size: 0.8rem;
+      color: #c9ddd2;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.7rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.3rem;
+    }
+
+    .pillar {
+      background: var(--surface-2);
+      border-radius: 18px;
+      padding: 1.1rem;
+    }
+
+    .pillar-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-accent-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar h3 {
+      font-size: 0.96rem;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .pillar p {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .coach-card {
+      height: 100%;
+      background: linear-gradient(180deg, #fbfaf7 0%, #f1eee8 100%);
+    }
+
+    .coach-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .coach-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-accent-dark));
+      color: #f3f8f5;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .coach-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
+    }
+
+    .coach-role {
+      font-size: 0.85rem;
+      color: var(--green-accent-dark);
+      font-weight: 700;
+    }
+
+    .coach-card p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .coach-points {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .coach-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .coach-point i {
+      margin-top: 0.42rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green-accent);
+      flex-shrink: 0;
+    }
+
+    .programs-wrap {
+      margin-top: 2rem;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .program-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.4rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .program-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.4rem 0.7rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .badge-main {
+      background: #dff2e8;
+      color: var(--green-accent-dark);
+    }
+
+    .badge-addon {
+      background: #edf1ee;
+      color: #51625a;
+    }
+
+    .program-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.02em;
+    }
+
+    .program-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .program-meta {
+      display: grid;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .program-meta li {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+
+    .program-meta li i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green-accent);
+      margin-top: 0.42rem;
+      flex-shrink: 0;
+    }
+
+    .program-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .logic-shell {
+      background: linear-gradient(135deg, #f1eee8 0%, #fbfaf7 100%);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .logic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.9rem;
+      margin-top: 1.4rem;
+    }
+
+    .logic-step {
+      background: white;
+      border: 1px solid rgba(16, 35, 25, 0.08);
+      border-radius: 20px;
+      padding: 1.1rem;
+    }
+
+    .logic-step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--green-dark);
+      color: var(--green-accent);
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .logic-step h3 {
+      font-size: 0.96rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .logic-step p {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .final-cta {
+      padding-top: 1rem;
+    }
+
+    .final-box {
+      background: linear-gradient(135deg, #102319 0%, #173628 100%);
+      color: #edf5f0;
+      border-radius: 30px;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .final-box .eyebrow {
+      background: rgba(255,255,255,0.10);
+      color: #d4e5dc;
+    }
+
+    .final-box h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    .final-box h2 span {
+      color: var(--green-accent);
+    }
+
+    .final-box p {
+      color: var(--green-pale);
+      max-width: 58ch;
+      margin: 0 auto 1.5rem;
+    }
+
+    footer {
+      padding: 2rem 0 2.8rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .intro-grid,
+      .program-grid,
+      .logic-grid,
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card-wrap {
+        justify-content: stretch;
+      }
+
+      .hero-card {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 4rem 0;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 0;
+      }
+
+      .nav-links {
+        justify-content: space-between;
+      }
+
+      .nav-cta {
+        text-align: center;
+      }
+
+      .hero-grid {
+        padding: 2.5rem 1.3rem;
+      }
+
+      .panel,
+      .program-card,
+      .logic-shell {
+        padding: 1.25rem;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(var(--max), calc(100% - 1.2rem));
+      }
+
+      .btn-row,
+      .program-actions,
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn,
+      .nav-cta {
+        width: 100%;
+      }
+
+      .hero-proof {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <nav>
-      <div class="nav-logo">
-        <svg width="36" height="36" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="55,8 98,30 98,78 55,100 12,78 12,30" fill="#1a3c2b"/>
-          <text x="18" y="74" font-family="DM Sans, Arial, sans-serif" font-weight="700" font-size="62" fill="#f5f0e8" letter-spacing="-4">SV</text>
-          <ellipse cx="84" cy="22" rx="9" ry="15" transform="rotate(35 84 22)" fill="#4caf82"/>
-          <ellipse cx="92" cy="30" rx="5" ry="9" transform="rotate(20 92 30)" fill="#4caf82" opacity="0.6"/>
-        </svg>
-        <div>
-          <div class="nav-name">Strong and <em>Vegan</em></div>
-          <div class="nav-tag">Yes I Am</div>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3c2.6 2 4.2 4.1 4.2 6.6A4.2 4.2 0 1 1 7.8 9.6C7.8 7.1 9.4 5 12 3Z"></path>
+            <path d="M12 13v8"></path>
+            <path d="M8 17h8"></path>
+          </svg>
         </div>
-      </div>
-      <a href="https://bastiengerard.gumroad.com/l/force-lower" target="_blank" rel="noopener noreferrer" class="nav-cta">Commencer ↗</a>
-    </nav>
+        <div class="brand-text">
+          <div class="brand-name">Strong and <span>Vegan</span></div>
+          <div class="brand-tag">Force · mobilité · progression</div>
+        </div>
+      </a>
 
-    <div class="hero">
-      <div class="badge">Force Lower</div>
-      <h1>Construire son corps.<br>Respecter ses <em>valeurs.</em></h1>
-      <p class="hero-sub">Parce que l'un n'empêche pas l'autre. Un programme de force lower avec bilan mobilité inclus pour identifier ce qui freine vraiment tes performances, et orienter vers le module correctif si besoin.</p>
-      <a href="https://bastiengerard.gumroad.com/l/force-lower" target="_blank" rel="noopener noreferrer" class="hero-cta">Je veux progresser ↗</a>
-      <p class="hero-micro">67€ · bilan mobilité inclus, sans surcoût · accès à vie</p>
-      <div class="proof">
-        <div class="proof-item"><div class="dot"></div>3 séances par semaine</div>
-        <div class="proof-item"><div class="dot"></div>Bilan mobilité inclus</div>
-        <div class="proof-item"><div class="dot"></div>Nutrition vegan incluse</div>
-        <div class="proof-item"><div class="dot"></div>Accès à vie</div>
-      </div>
+      <nav class="nav-links">
+        <a href="#vision">Vision</a>
+        <a href="#coach">Coach</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#methode">Méthode</a>
+      </nav>
+
+      <a class="nav-cta" href="#programmes">Voir les programmes</a>
     </div>
+  </header>
 
-    <p class="slabel">Pourquoi ça marche</p>
-    <div class="cards">
-      <div class="card">
-        <div class="icon ic-g">↑</div>
-        <h3>Force progressive</h3>
-        <p>3 blocs de 4 semaines. Accumulation, intensification, réalisation.</p>
-      </div>
-      <div class="card">
-        <div class="icon ic-t">◎</div>
-        <h3>Bilan mobilité inclus</h3>
-        <p>Deux tests simples en fin de bloc 1 pour identifier si ta cheville ou ta hanche freine tes lifts.</p>
-      </div>
-      <div class="card">
-        <div class="icon ic-a">◈</div>
-        <h3>Nutrition vegan</h3>
-        <p>Protéines végétales, timing, complémentation. Progresser sans produits animaux.</p>
-      </div>
-      <div class="card">
-        <div class="icon ic-b">⊞</div>
-        <h3>Lower structuré</h3>
-        <p>Deadlift et Front Squat comme piliers. Chaîne post et ant équilibrées.</p>
-      </div>
-    </div>
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">Strong and Vegan</div>
+              <h1>Construis plus de <span>force</span>. Bouge mieux. Progresse avec logique.</h1>
+              <p>
+                Une approche pensée pour développer la force, améliorer la qualité du mouvement et structurer ta progression avec des programmes simples, utiles et directement applicables.
+              </p>
 
-    <div class="parcours">
-      <p class="parcours-title">Ton parcours avec Force Lower</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div>
-            <h4>Tu achètes Force Lower - 67€</h4>
-            <p>Accès immédiat au programme 12 semaines et au bilan mobilité, sans surcoût.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div>
-            <h4>Tu suis le bloc 1 - 4 semaines</h4>
-            <p>Accumulation, apprentissage des patterns, mise en place de la base de force.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div>
-            <h4>Tu fais le bilan mobilité inclus</h4>
-            <p>Deux tests simples, sans matériel. Tu identifies en quelques minutes si ta cheville ou ta hanche freine tes performances.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div>
-            <h4>Tu débloques uniquement le module utile selon tes résultats</h4>
-            <p>Mobilité Cheville ou Mobilité Hanche à 22€ chacun, en option. Seulement si le bilan montre un vrai besoin.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div>
-            <h4>Tu continues Force Lower avec les blocs 2 et 3</h4>
-            <p>Les modules mobilité se font en parallèle, pas à la place. 10 à 15 minutes par jour suffit.</p>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="#programmes">Voir les programmes</a>
+                <a class="btn btn-secondary" href="https://bastiengerard.gumroad.com/l/force-lower" target="_blank" rel="noopener noreferrer">Découvrir Force Lower</a>
+              </div>
+
+              <div class="hero-proof">
+                <div class="hero-proof-item"><i></i><span>Un positionnement clair</span></div>
+                <div class="hero-proof-item"><i></i><span>Des programmes progressifs</span></div>
+                <div class="hero-proof-item"><i></i><span>Une logique force + mobilité</span></div>
+              </div>
+            </div>
+
+            <div class="hero-card-wrap">
+              <div class="hero-card">
+                <div class="hero-card-top">
+                  <div class="hero-card-label">Système d’offre</div>
+                  <div class="hero-card-title">Une gamme pensée pour évoluer</div>
+                  <div class="hero-card-text">
+                    Un programme principal, des modules ciblés, et une logique de progression simple à comprendre.
+                  </div>
+                </div>
+
+                <div class="hero-stack">
+                  <div class="hero-stack-item">
+                    <strong>01 — Programme principal</strong>
+                    <span>Force Lower pour construire une base solide.</span>
+                  </div>
+                  <div class="hero-stack-item">
+                    <strong>02 — Besoin spécifique</strong>
+                    <span>Modules mobilité cheville et hanche.</span>
+                  </div>
+                  <div class="hero-stack-item">
+                    <strong>03 — Logique cohérente</strong>
+                    <span>Une méthode qui relie entraînement, mouvement et progression.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="prog" id="programme">
-      <p class="prog-title">Force Lower</p>
-      <p class="prog-sub">12 semaines, 3 séances par semaine, Lower 1 / Upper / Lower 2</p>
-      <div class="blocs">
-        <div class="bloc">
-          <div class="bloc-n">Bloc 1</div>
-          <div class="bloc-name">Accumulation</div>
-          <div class="bloc-d">Semaines 1 à 4, volume élevé</div>
-        </div>
-        <div class="bloc">
-          <div class="bloc-n">Bloc 2</div>
-          <div class="bloc-name">Intensification</div>
-          <div class="bloc-d">Semaines 5 à 8, charge haute</div>
-        </div>
-        <div class="bloc">
-          <div class="bloc-n">Bloc 3</div>
-          <div class="bloc-name">Réalisation</div>
-          <div class="bloc-d">Semaines 9 à 12, exprimer la force</div>
-        </div>
-      </div>
-      <div class="price-row">
-        <div class="price">67€ <span>accès à vie</span></div>
-        <a href="https://bastiengerard.gumroad.com/l/force-lower" target="_blank" rel="noopener noreferrer" class="buy">Je commence ↗</a>
-      </div>
-    </div>
+    <section class="section" id="vision">
+      <div class="container intro-grid">
+        <div class="panel">
+          <div class="eyebrow">Vision</div>
+          <h2 class="section-title">Une approche simple, crédible et utile.</h2>
+          <p class="section-text">
+            Strong and Vegan n’est pas juste une page de vente pour un seul programme. C’est un projet construit autour d’une idée claire : aider à développer la force, améliorer le mouvement et proposer des outils concrets, progressifs et applicables.
+          </p>
 
-    <div class="bilan">
-      <div class="bilan-header">
-        <p class="bilan-title">Bilan mobilité inclus, sans surcoût</p>
-        <span class="bilan-tag">Inclus dans Force Lower</span>
-      </div>
-      <div class="bilan-steps">
-        <div class="bilan-step">
-          <div class="bilan-step-dot"></div>
-          <p>Tu identifies en quelques minutes si ta cheville ou ta hanche freine tes performances.</p>
-        </div>
-        <div class="bilan-step">
-          <div class="bilan-step-dot"></div>
-          <p>Deux tests simples à la maison, sans matériel spécifique.</p>
-        </div>
-        <div class="bilan-step">
-          <div class="bilan-step-dot"></div>
-          <p>Ensuite, tu débloques uniquement le module correctif dont tu as besoin, si le test montre un vrai déficit.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="eco">
-      <p class="eco-title">Ce qui est inclus et ce qui est en option</p>
-      <p class="eco-sub">Force Lower inclut le programme principal et le bilan mobilité. Les modules correctifs sont payants en supplément, seulement si le bilan le justifie.</p>
-      <div class="eco-section">
-        <p class="eco-label">Inclus dans les 67€</p>
-        <div class="eco-grid">
-          <div class="eco-item eco-main">
-            <strong>Force Lower</strong>
-            <span>Programme 12 semaines</span>
+          <div class="pillars">
+            <div class="pillar">
+              <div class="pillar-num">01</div>
+              <h3>Force</h3>
+              <p>Construire une base physique solide avec une progression claire.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-num">02</div>
+              <h3>Mobilité</h3>
+              <p>Améliorer les amplitudes utiles pour mieux bouger et mieux s’entraîner.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-num">03</div>
+              <h3>Autonomie</h3>
+              <p>Donner une structure simple pour comprendre quoi faire et pourquoi.</p>
+            </div>
           </div>
-          <div class="eco-item eco-main">
-            <strong>Bilan mobilité</strong>
-            <span>Inclus, sans surcoût</span>
+        </div>
+
+        <div class="panel coach-card" id="coach">
+          <div class="eyebrow">Le coach</div>
+
+          <div class="coach-top">
+            <div class="coach-avatar">BG</div>
+            <div>
+              <div class="coach-name">Bastien Gerard</div>
+              <div class="coach-role">Coach — Strong and Vegan</div>
+            </div>
+          </div>
+
+          <p>
+            Le projet repose sur une vision cohérente de l’entraînement : force, mouvement fonctionnel, progression et clarté. L’objectif n’est pas de compliquer la pratique, mais de proposer un cadre utile, lisible et applicable.
+          </p>
+
+          <div class="coach-points">
+            <div class="coach-point"><i></i><span>Un univers centré sur la force et la qualité du mouvement.</span></div>
+            <div class="coach-point"><i></i><span>Des programmes conçus pour être compris et utilisés facilement.</span></div>
+            <div class="coach-point"><i></i><span>Une identité cohérente entre projet, contenu et mise en pratique.</span></div>
           </div>
         </div>
       </div>
-      <div class="eco-section">
-        <p class="eco-label">Options payantes en supplément</p>
-        <div class="eco-grid">
-          <div class="eco-item eco-optional">
-            <strong>Mobilité cheville</strong>
-            <span>Si bilan limitant, 22€</span>
-          </div>
-          <div class="eco-item eco-optional">
-            <strong>Mobilité hanche</strong>
-            <span>Si bilan limitant, 22€</span>
+    </section>
+
+    <section class="section" id="programmes">
+      <div class="container">
+        <div class="eyebrow">Programmes</div>
+        <h2 class="section-title">Une gamme pensée pour durer, pas juste pour vendre une page.</h2>
+        <p class="section-text">
+          Chaque offre a une place claire dans l’écosystème Strong and Vegan. Tu peux commencer par le programme principal, ou aller vers un besoin plus ciblé si tu veux travailler une limitation précise.
+        </p>
+
+        <div class="programs-wrap">
+          <div class="program-grid">
+            <article class="program-card">
+              <div class="program-badge badge-main">Offre principale</div>
+              <h3>Force Lower</h3>
+              <p>
+                Le programme central pour développer la force du bas du corps avec une structure progressive, claire et orientée résultats.
+              </p>
+
+              <ul class="program-meta">
+                <li><i></i><span>Base forte et lisible pour la progression.</span></li>
+                <li><i></i><span>Positionné comme programme principal de la gamme.</span></li>
+                <li><i></i><span>Point d’entrée logique dans l’univers Strong and Vegan.</span></li>
+              </ul>
+
+              <div class="program-actions">
+                <a class="btn btn-dark" href="https://bastiengerard.gumroad.com/l/force-lower" target="_blank" rel="noopener noreferrer">Acheter Force Lower</a>
+              </div>
+            </article>
+
+            <article class="program-card">
+              <div class="program-badge badge-addon">Module ciblé</div>
+              <h3>Mobilité Cheville</h3>
+              <p>
+                Un module dédié à l’amélioration de l’amplitude de cheville pour soutenir des mouvements comme le squat et améliorer le confort mécanique.
+              </p>
+
+              <ul class="program-meta">
+                <li><i></i><span>Travail ciblé sur une limitation fréquente.</span></li>
+                <li><i></i><span>Logique complémentaire à un programme de force.</span></li>
+                <li><i></i><span>Peut s’intégrer comme add-on dans la progression.</span></li>
+              </ul>
+
+              <div class="program-actions">
+                <a class="btn btn-light" href="#">Ajouter le lien produit</a>
+              </div>
+            </article>
+
+            <article class="program-card">
+              <div class="program-badge badge-addon">Module ciblé</div>
+              <h3>Mobilité Hanche</h3>
+              <p>
+                Un programme spécifique pour améliorer la mobilité de hanche, la profondeur, le contrôle et la qualité des mouvements du bas du corps.
+              </p>
+
+              <ul class="program-meta">
+                <li><i></i><span>Complément pertinent si la hanche est limitante.</span></li>
+                <li><i></i><span>Travail orienté mouvement et contrôle.</span></li>
+                <li><i></i><span>S’intègre naturellement à l’écosystème existant.</span></li>
+              </ul>
+
+              <div class="program-actions">
+                <a class="btn btn-light" href="#">Ajouter le lien produit</a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="section" id="methode">
+      <div class="container">
+        <div class="logic-shell">
+          <div class="eyebrow">Méthode</div>
+          <h2 class="section-title">Une structure logique entre force, bilan et modules ciblés.</h2>
+          <p class="section-text">
+            L’idée n’est pas d’empiler des offres sans cohérence. La logique du projet repose sur un fil simple : identifier un besoin, orienter vers la bonne ressource, puis progresser avec méthode.
+          </p>
+
+          <div class="logic-grid">
+            <div class="logic-step">
+              <div class="logic-step-num">1</div>
+              <h3>Commencer</h3>
+              <p>Entrer dans l’univers par un programme principal ou un besoin spécifique.</p>
+            </div>
+
+            <div class="logic-step">
+              <div class="logic-step-num">2</div>
+              <h3>Identifier</h3>
+              <p>Repérer la limitation de mobilité ou le levier principal à travailler.</p>
+            </div>
+
+            <div class="logic-step">
+              <div class="logic-step-num">3</div>
+              <h3>Orienter</h3>
+              <p>Choisir le programme ou le module le plus pertinent selon le profil.</p>
+            </div>
+
+            <div class="logic-step">
+              <div class="logic-step-num">4</div>
+              <h3>Progresser</h3>
+              <p>Construire une progression plus cohérente, plus durable et plus lisible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="container">
+        <div class="final-box">
+          <div class="eyebrow">Strong and Vegan</div>
+          <h2>Une marque, une méthode, des <span>programmes</span> qui s’assemblent.</h2>
+          <p>
+            Pars sur la base principale avec Force Lower, puis ajoute les modules les plus pertinents au fur et à mesure de ta progression.
+          </p>
+
+          <div class="btn-row" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://bastiengerard.gumroad.com/l/force-lower" target="_blank" rel="noopener noreferrer">Commencer avec Force Lower</a>
+            <a class="btn btn-secondary" href="#programmes">Voir toute la gamme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Strong and Vegan — Force, mobilité, progression.
     </div>
-
-    <div class="coach">
-      <div class="avatar">B</div>
-      <div>
-        <p class="coach-name">Coach Bastien</p>
-        <p class="coach-role">Coach sportif, vegan depuis 2 ans, CrossFitteur</p>
-        <p class="coach-bio">"J'ai construit Force Lower pour progresser en force sans compromis avec mes valeurs. Vegan et fort, on t'a dit que c'était incompatible. Moi aussi. Jusqu'à ce que je le vive."</p>
-      </div>
-    </div>
-
-    <p class="slabel">Questions fréquentes</p>
-    <div class="faq">
-      <div class="faq-item" onclick="this.classList.toggle('open')">
-        <p class="faq-q">Est-ce que le programme convient aux débutants ?</p>
-        <p class="faq-a">Le programme est conçu pour des personnes qui s'entraînent déjà un peu. Un minimum de familiarité avec les mouvements de base est recommandé. Des démos vidéo sont disponibles pour chaque exercice.</p>
-      </div>
-      <div class="faq-item" onclick="this.classList.toggle('open')">
-        <p class="faq-q">Comment fonctionne le bilan mobilité ?</p>
-        <p class="faq-a">A la fin du bloc 1, tu fais deux tests simples à la maison sans matériel. Le Wall Ankle Mobility Test pour la cheville et le Deep Squat Test pour la hanche. Chaque test prend moins de 2 minutes et t'oriente vers le module dont tu as besoin.</p>
-      </div>
-      <div class="faq-item" onclick="this.classList.toggle('open')">
-        <p class="faq-q">Dois-je obligatoirement acheter les modules mobilité ?</p>
-        <p class="faq-a">Non. Les modules mobilité sont optionnels et payants en supplément. Ils ne sont recommandés que si le bilan montre un vrai déficit. Si tes tests sont bons, tu n'en as pas besoin. Force Lower fonctionne seul.</p>
-      </div>
-      <div class="faq-item" onclick="this.classList.toggle('open')">
-        <p class="faq-q">Je ne suis pas vegan, est-ce que le programme me convient ?</p>
-        <p class="faq-a">Absolument. Le programme de force est universel. Les conseils nutrition sont orientés vegan mais restent pertinents pour n'importe qui souhaitant optimiser ses apports protéiques.</p>
-      </div>
-      <div class="faq-item" onclick="this.classList.toggle('open')">
-        <p class="faq-q">Que se passe-t-il après les 12 semaines ?</p>
-        <p class="faq-a">Un retest est intégré en fin de bloc 3 pour mesurer tes gains. Tu peux ensuite reprendre le cycle avec des charges plus élevées ou passer au programme Force Upper.</p>
-      </div>
-    </div>
-
-    <div class="final">
-      <p class="final-title">Ton corps. Tes valeurs.<br><em>Aucun compromis.</em></p>
-      <p class="final-sub">12 semaines. 3 séances par semaine. Un système complet.</p>
-      <a href="https://bastiengerard.gumroad.com/l/force-lower" target="_blank" rel="noopener noreferrer" class="final-cta">Commencer Force Lower, 67€ ↗</a>
-    </div>
-
-    <footer>Strong and Vegan, Yes I Am, Coach Bastien, Brabant wallon, Belgique</footer>
-
-  </div>
-  <script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => item.classList.toggle('open'));
-    });
-  </script>
+  </footer>
 </body>
 </html>
